@@ -27,15 +27,15 @@ namespace ApiDocker.Controllers
 
         //Get: api/Todo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> Get()
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTotalItems()
         {
             return await _context.TodoItems.ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> Get(long id)
+        public ActionResult<TodoItem> GetTodoItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = _context.TodoItems.Find(id);
 
             if (todoItem == null)
             {
@@ -47,13 +47,20 @@ namespace ApiDocker.Controllers
             }
         }
 
+        [HttpGet("filter/name={name}")]
+        public IEnumerable<TodoItem> GetTodoItemPerName(string name)
+        {
+            var todoItem = _context.TodoItems.Where(c => c.Name.Equals(name)).ToList();
+            return todoItem;
+        }
+
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item)
         {
             _context.TodoItems.Add(item);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Get), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(GetTodoItem), new { id = item.Id }, item);
         }
 
         [HttpPut("{id}")]
@@ -71,7 +78,7 @@ namespace ApiDocker.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<TodoItem>> Delete(long id)
+        public async Task<ActionResult<TodoItem>> DeleteTodoItem(long id)
         {
             var todoItem = await _context.TodoItems.FindAsync(id);
 
@@ -85,5 +92,7 @@ namespace ApiDocker.Controllers
 
             return NoContent();
         }
+
+        
     }
 }
