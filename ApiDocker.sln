@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocker", "ApiDocker\ApiDocker.csproj", "{6798B42A-2533-4508-A55C-CD7A2E6F32E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{BAA34698-62FC-4DB8-AD28-61C972D16FCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6798B42A-2533-4508-A55C-CD7A2E6F32E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6798B42A-2533-4508-A55C-CD7A2E6F32E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6798B42A-2533-4508-A55C-CD7A2E6F32E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6798B42A-2533-4508-A55C-CD7A2E6F32E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA34698-62FC-4DB8-AD28-61C972D16FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA34698-62FC-4DB8-AD28-61C972D16FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA34698-62FC-4DB8-AD28-61C972D16FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA34698-62FC-4DB8-AD28-61C972D16FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FD67AD2-7542-4681-8AA0-AEB6EC01466C}
+	EndGlobalSection
+EndGlobal
